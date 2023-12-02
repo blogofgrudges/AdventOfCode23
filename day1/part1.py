@@ -11,7 +11,7 @@ def calibration_values(values):
 pattern = re.compile(r'([0-9])')
 
 total = 0
-with open('puzzle_input') as file:
+with open('puzzle_input', 'r') as file:
     for line in file:
         matches = re.findall(pattern, line)
         print(matches)

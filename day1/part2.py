@@ -44,7 +44,7 @@ mapped_keys = '|'.join(mapping.keys())
 pattern = re.compile(rf"[0-9]|{'|'.join(mapping.keys())}")
 
 total = 0
-with open('puzzle_input') as file:
+with open('puzzle_input', 'r') as file:
     for line in file:
         matches = re.findall(pattern, line)
         total += calibration_values(matches)
