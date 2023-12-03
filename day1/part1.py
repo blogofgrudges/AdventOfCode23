@@ -1,20 +1,14 @@
 import re
 
 
-def calibration_values(values):
-    if len(values) >= 2:
-        return int(values[0] + values[-1])
-    else:
-        return int(values[0] * 2)
-
-
-pattern = re.compile(r'([0-9])')
+start_pattern = re.compile(r'([0-9]).*$')
+end_pattern = re.compile(r'^.*([0-9])')
 
 total = 0
 with open('puzzle_input', 'r') as file:
     for line in file:
-        matches = re.findall(pattern, line)
-        print(matches)
-        total += calibration_values(matches)
+        first_digit = re.search(start_pattern, line).groups(0)[0]
+        last_digit = re.search(end_pattern, line).groups(0)[0]
+        total += int(first_digit + last_digit)
 
 print(total)
