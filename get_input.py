@@ -2,6 +2,12 @@ import argparse
 
 import requests
 
+
+"""
+like:
+get_input.py 4 ../aoc_session
+"""
+
 a_parser = argparse.ArgumentParser()
 a_parser.add_argument('day', type=int)
 a_parser.add_argument('session', type=str)
